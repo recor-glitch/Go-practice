@@ -4,17 +4,14 @@ import (
 	"fmt"
 
 	"github.com/recor-glitch/Go-practice/LinkList/singleLinkList"
-	"github.com/recor-glitch/Go-practice/safe-map/multiSafeMap"
-	"github.com/recor-glitch/Go-practice/safe-map/singleSafeMap"
+	"github.com/recor-glitch/Go-practice/SafeMap/multiSafeMap"
+	"github.com/recor-glitch/Go-practice/SafeMap/singleSafeMap"
 )
 
 func main() {
 
 	// DUMMY DATA
 
-
-
-	
 	data := []any{
 		map[string]string{"A": "value1", "B": "value2"},
 		"value1",
@@ -24,13 +21,7 @@ func main() {
 		"value2",
 	}
 
-
-
-
 	// LINK LIST
-
-
-
 
 	// SINGLY LINK LIST
 	ll := singleLinkList.LinkList{}
@@ -46,11 +37,7 @@ func main() {
 	// DISPLAY DATA FROM LINK LIST
 	ll.Display()
 
-
-
 	// SAFE MAP
-
-	
 
 	// CREATE A NEW INSTANCE OF SAFE MAP
 	safeMap := singleSafeMap.NewSafeMap()
@@ -68,11 +55,6 @@ func main() {
 	// DELETE THE VALUE FROM THE MAP
 	safeMap.Delete("key1")
 
-
-
-
-
-	
 	// Initialize the multi safe map
 	multiSafeMap := multiSafeMap.NewMultiSafeMap(5)
 	fmt.Printf("My safe map: %v\n", multiSafeMap)
