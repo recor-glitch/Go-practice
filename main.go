@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/recor-glitch/Go-practice/Link-List/circularLinkList"
 	"github.com/recor-glitch/Go-practice/Link-List/doublyLinkList"
 	"github.com/recor-glitch/Go-practice/Link-List/singleLinkList"
 	"github.com/recor-glitch/Go-practice/SafeMap/multiSafeMap"
@@ -104,6 +105,20 @@ func doublyLinkListFunc() {
 	dl.Display()
 }
 
+func circularLinkListFunc() {
+	cl := circularLinkList.LinkList{}
+
+	// INSERT DATA INTO THE CIRCULAR LINK LIST
+	for _,n := range data {
+		cl.Insert(n)
+	}
+
+	// DISPLAY DATA FROM CIRCULAR LINK LIST
+	cl.Display()
+
+
+}
+
 func main() {
 
 	// LINK LIST
@@ -112,7 +127,10 @@ func main() {
 	// singlyLinkListFunc()
 
 	// DOUBLY LINK LIST
-	doublyLinkListFunc()
+	// doublyLinkListFunc()
+
+	// CIRCULAR LINK LIST
+	circularLinkListFunc()
 
 	// SAFE MAP
 
