@@ -3,41 +3,24 @@ package main
 import (
 	"fmt"
 
+	"github.com/recor-glitch/Go-practice/Link-List/doublyLinkList"
 	"github.com/recor-glitch/Go-practice/Link-List/singleLinkList"
 	"github.com/recor-glitch/Go-practice/SafeMap/multiSafeMap"
 	"github.com/recor-glitch/Go-practice/SafeMap/singleSafeMap"
 )
 
-func main() {
+// DUMMY DATA
 
-	// DUMMY DATA
+var data []any = []any{
+	map[string]string{"A": "value1", "B": "value2"},
+	"value1",
+	1,
+	true,
+	[]int{1, 2, 3, 4, 5},
+	"value2",
+}
 
-	data := []any{
-		map[string]string{"A": "value1", "B": "value2"},
-		"value1",
-		1,
-		true,
-		[]int{1, 2, 3, 4, 5},
-		"value2",
-	}
-
-	// LINK LIST
-
-	// SINGLY LINK LIST
-	ll := singleLinkList.LinkList{}
-
-	// INSERT DATA INTO LINK LIST
-	for i, d := range data {
-		_, err := ll.Insert(fmt.Sprintf("key%v", i), d)
-		if err != nil {
-			fmt.Println(err)
-		}
-	}
-
-	// DISPLAY DATA FROM LINK LIST
-	ll.Display()
-
-	// SAFE MAP
+func singleSafeMapFunc() {
 
 	// CREATE A NEW INSTANCE OF SAFE MAP
 	safeMap := singleSafeMap.NewSafeMap()
@@ -54,6 +37,9 @@ func main() {
 
 	// DELETE THE VALUE FROM THE MAP
 	safeMap.Delete("key1")
+}
+
+func multiSafeMapFunc() {
 
 	// Initialize the multi safe map
 	multiSafeMap := multiSafeMap.NewMultiSafeMap(5)
@@ -82,4 +68,57 @@ func main() {
 		return
 	}
 	fmt.Printf("Successfully deleted the key from the map")
+}
+
+func singlyLinkListFunc() {
+
+	ll := singleLinkList.LinkList{}
+
+	// INSERT DATA INTO LINK LIST
+	for i, d := range data {
+		_, err := ll.Insert(fmt.Sprintf("key%v", i), d)
+		if err != nil {
+			fmt.Println(err)
+		}
+	}
+
+	// DISPLAY DATA FROM LINK LIST
+	ll.Display()
+}
+
+func doublyLinkListFunc() {
+
+	dl := doublyLinkList.LinkList{}
+
+	// INSERT DATA INTO DOUBLY LINK LIST
+	for _, d := range data {
+		dl.Insert(d)
+	}
+
+	// INSERT DATA INTO PARTICULAR INDEX
+	dl.InsertElementInIndex(5, "I am here at index 5")
+	dl.InsertElementInIndex(0, "I am here at index 0")
+	dl.InsertElementInIndex(2, "I am here at index 2")
+
+	// DISPLAY DATA FROM DOUBLY LINK LIST
+	dl.Display()
+}
+
+func main() {
+
+	// LINK LIST
+
+	// SINGLY LINK LIST
+	// singlyLinkListFunc()
+
+	// DOUBLY LINK LIST
+	doublyLinkListFunc()
+
+	// SAFE MAP
+
+	// SINGLE SAFE MAP
+	// singleSafeMapFunc()
+
+	// MULTI SAFE MAP
+	// multiSafeMapFunc()
 }
