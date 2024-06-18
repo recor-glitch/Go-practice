@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/recor-glitch/Go-practice/LinkList/singleLinkList"
+	"github.com/recor-glitch/Go-practice/Link-List/singleLinkList"
 	"github.com/recor-glitch/Go-practice/SafeMap/multiSafeMap"
 	"github.com/recor-glitch/Go-practice/SafeMap/singleSafeMap"
 )
